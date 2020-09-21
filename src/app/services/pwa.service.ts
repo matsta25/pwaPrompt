@@ -17,7 +17,7 @@ export class PwaService {
   ) { }
 
   initPwaPrompt() {
-    alert(this.platform)
+    alert(this.platform.toString())
     if (this.platform.ANDROID) {
       window.addEventListener('beforeinstallprompt', (event: any) => {
         event.preventDefault();
@@ -26,7 +26,6 @@ export class PwaService {
       });
     }
     if (this.platform.IOS || this.platform.SAFARI) {
-      alert("this.platform.IOS");
       const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator['standalone']);
       if (!isInStandaloneMode) {
         this.openPromptComponent('ios');
