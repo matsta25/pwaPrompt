@@ -25,6 +25,7 @@ export class PwaService {
       });
     }
     if (this.platform.IOS) {
+      alert("this.platform.IOS");
       const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator['standalone']);
       if (!isInStandaloneMode) {
         this.openPromptComponent('ios');
