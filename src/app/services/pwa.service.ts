@@ -17,6 +17,7 @@ export class PwaService {
   ) { }
 
   initPwaPrompt() {
+    alert(this.platform)
     if (this.platform.ANDROID) {
       window.addEventListener('beforeinstallprompt', (event: any) => {
         event.preventDefault();
@@ -24,7 +25,7 @@ export class PwaService {
         this.openPromptComponent('android');
       });
     }
-    if (this.platform.IOS) {
+    if (this.platform.IOS || this.platform.SAFARI) {
       alert("this.platform.IOS");
       const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator['standalone']);
       if (!isInStandaloneMode) {
