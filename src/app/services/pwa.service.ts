@@ -17,7 +17,7 @@ export class PwaService {
   ) { }
 
   initPwaPrompt() {
-    alert(this.platform.toString())
+    alert(this.platform.stringify())
     if (this.platform.ANDROID) {
       window.addEventListener('beforeinstallprompt', (event: any) => {
         event.preventDefault();
